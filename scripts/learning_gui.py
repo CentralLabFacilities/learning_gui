@@ -127,13 +127,12 @@ class LearningGUI(QtGui.QMainWindow):
                                 'torso_lift_joint',
                                 'hand_index_joint', 'hand_mrl_joint', 'hand_thumb_joint']
             self.eef = 'hand'
-        elif "gripper_left_finger_joint" in self.last_js.name:
+        else:
             uic.loadUi(path + '/resources/tiago_learn_gripper.ui', self)
             self.joint_names = ['head_1_joint', 'head_2_joint',
                                 'arm_1_joint', 'arm_2_joint', 'arm_3_joint',
                                 'arm_4_joint', 'arm_5_joint', 'arm_6_joint', 'arm_7_joint',
-                                'torso_lift_joint',
-                                'gripper_left_finger_joint', 'gripper_right_finger_joint']
+                                'torso_lift_joint']
             self.eef = 'gripper'
         self.set_sliders_limits()
         self.set_callbacks_sliders()
